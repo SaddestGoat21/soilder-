@@ -7,8 +7,8 @@
 
     <style>
         body {
-            background: black;
-            color: rgb(255, 0, 0);
+            background-color: black;
+            color: red;
             font-family: monospace;
             display: flex;
             flex-direction: column;
@@ -21,19 +21,18 @@
         }
 
         img {
-            max-width: 60vw;     /* responsive image */
+            max-width: 60vw;
             height: auto;
             margin-bottom: 20px;
         }
 
         #text {
-            font-size: clamp(18px, 5vw, 26px); /* auto size for phone */
-            word-wrap: break-word;
+            font-size: clamp(18px, 5vw, 26px);
+            white-space: pre-wrap;
         }
 
         .cursor {
             display: inline-block;
-            width: 10px;
             animation: blink 1s infinite;
         }
 
@@ -46,8 +45,27 @@
 
 <body>
 
-    <!-- ADD IMAGE HERE -->
-    <img src="image.png" alt="My Image">
+    <!-- IMAGE FILE (same folder as HTML) -->
+    <img src="image.png" alt="Image">
 
     <div>
-        <span id="text"></span><span
+        <span id="text"></span><span class="cursor">|</span>
+    </div>
+
+    <script>
+        const message = "Greetings soldier beta! 😎";
+        let index = 0;
+
+        function typeEffect() {
+            if (index < message.length) {
+                document.getElementById("text").innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeEffect, 90);
+            }
+        }
+
+        typeEffect();
+    </script>
+
+</body>
+</html>
