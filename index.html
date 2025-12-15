@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">    <title>Thats for you </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>That's for you</title>
+
     <style>
         body {
             background: black;
@@ -13,12 +16,19 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 20px;
+            text-align: center;
         }
 
         img {
-            width: 180px;
+            max-width: 60vw;     /* responsive image */
+            height: auto;
             margin-bottom: 20px;
-            
+        }
+
+        #text {
+            font-size: clamp(18px, 5vw, 26px); /* auto size for phone */
+            word-wrap: break-word;
         }
 
         .cursor {
@@ -33,29 +43,11 @@
         }
     </style>
 </head>
+
 <body>
 
-<!-- 🔥 ADD IMAGE HERE -->
-<img src="image.png" alt="My Image">
+    <!-- ADD IMAGE HERE -->
+    <img src="image.png" alt="My Image">
 
-<div>
-    <span id="text"></span><span class="cursor">|</span>
-</div>
-
-<script>
-    const message = "Greetings soilders ! 😎"; // ✍️ CHANGE THIS
-    let i = 0;
-
-    function typeEffect() {
-        if (i < message.length) {
-            document.getElementById("text").innerHTML += message.charAt(i);
-            i++;
-            setTimeout(typeEffect, 100);
-        }
-    }
-
-    typeEffect();
-</script>
-
-</body>
-</html>
+    <div>
+        <span id="text"></span><span
