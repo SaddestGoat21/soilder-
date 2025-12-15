@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    <title>Thats for you </title>
+    <style>
+        body {
+            background: black;
+            color: rgb(255, 0, 0);
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        img {
+            width: 180px;
+            margin-bottom: 20px;
+            
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 🔥 ADD IMAGE HERE -->
+<img src="image.png" alt="My Image">
+
+<div>
+    <span id="text"></span><span class="cursor">|</span>
+</div>
+
+<script>
+    const message = "Greetings soilders ! 😎"; // ✍️ CHANGE THIS
+    let i = 0;
+
+    function typeEffect() {
+        if (i < message.length) {
+            document.getElementById("text").innerHTML += message.charAt(i);
+            i++;
+            setTimeout(typeEffect, 100);
+        }
+    }
+
+    typeEffect();
+</script>
+
+</body>
+</html>
