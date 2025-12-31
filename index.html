@@ -1,76 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>That's for you</title>
+    <title>Happy New Year</title>
 
     <style>
         body {
-            background-color: black;
-            color: red;
-            font-family: monospace;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: rgb(28, 24, 31);
             margin: 0;
-            padding: 20px;
-            text-align: left ;
         }
 
-        img {
-            max-width: 60vw;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        #text {
-            font-size: clamp(18px, 5vw, 26px);
-            white-space: pre-wrap;
-        }
-
-        .cursor {
-            display: inline-block;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50%, 100% { opacity: 1; }
-            25%, 75% { opacity: 0; }
+        .center {
+            display: block;
+            margin: 20px auto;
+            max-width: 90%;  
+            height: auto;     
         }
     </style>
 </head>
-
 <body>
 
-    <!-- IMAGE FILE (same folder as HTML) -->
-    <img src="IMG-20250906-WA0003.jpg" alt="Image">
-
-    <div>
-        <span id="text"></span><span class="cursor">|</span>
-    </div>
-
-    <script>
-        const message = "Bhosdike Lokesh chitiya 🖕";
-        let index = 0;
-
-        function typeEffect() {
-            if (index < message.length) {
-                document.getElementById("text").innerHTML += message.charAt(index);
-                index++;
-                setTimeout(typeEffect, 90);
-            }
-        }
-
-        typeEffect();
-    </script>
+    <img src="Happy.jpeg" alt="happy new year" class="center">
+    <pre style="color: red; font-family: cursive;">
+         --------                                                                     ---------
+        |Family|                                                                    |Friend|
+         --------                                                                     ---------
+         Elders(बड़े)                                                                    Collage
+         cousin()                                                                    School
+    </pre>
 
 </body>
 </html>
-
-
-
-
-
